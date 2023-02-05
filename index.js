@@ -7,7 +7,10 @@ const inputNameEl = document.getElementById("inputName-el");
 const inputBtn = document.getElementById("input-btn");
 
 inputBtn.addEventListener("click", function() {
-    playerEl.textContent = "Welcome, "+inputNameEl.value;
+    if( inputNameEl.value != ""){playerEl.textContent = "Welcome, "+inputNameEl.value;}
+    else(
+        console.log("Input your name, please.")
+    )
 });
 
 let cards = [];
@@ -18,6 +21,8 @@ let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
+
+// 2. Grab ahold of the player-el paragraph and store it in a variable called playerEl
 let playerEl = document.getElementById("player-el");
 
 

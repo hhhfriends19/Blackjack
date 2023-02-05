@@ -1,9 +1,14 @@
 // 1. Create the player object. Give it two keys, name and chips,
-let player = {
-  name: "Mavis",
-  chips: 145,
-};
+// let player = {
+//   name: "Mavis",
+//   chips: 145,
+// };
+const inputNameEl = document.getElementById("inputName-el");
+const inputBtn = document.getElementById("input-btn");
 
+inputBtn.addEventListener("click", function() {
+    playerEl.textContent = "Welcome, "+inputNameEl.value;
+});
 
 let cards = [];
 let sum = 0;
@@ -13,12 +18,7 @@ let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
-
-
-// 2. Grab ahold of the player-el paragraph and store it in a variable called playerEl
 let playerEl = document.getElementById("player-el");
-// 3. Render the player's name and chips in playerEl
-playerEl.textContent = player.name + " : $" + player.chips;
 
 
 function getRandomCard() {
@@ -32,7 +32,6 @@ function getRandomCard() {
   }
 }
 
-
 function startGame() {
   isAlive = true;
   let firstCard = getRandomCard();
@@ -42,15 +41,12 @@ function startGame() {
   renderGame();
 }
 
-
 function renderGame() {
   cardsEl.textContent = "Cards: ";
-
 
   for (let i = 0; i < cards.length; i++) {
     cardsEl.textContent += cards[i] + " ";
   }
-
 
   sumEl.textContent = "Sum : " + sum;
   if (sum <= 20) {
@@ -65,11 +61,9 @@ function renderGame() {
   messageEl.textContent = message;
 }
 
-
 function newCard() {
   // message = "Do you want to drawing a new card?";
   // messageEl.textContent = message;
-
 
   if (isAlive === true && hasBlackjack === false) {
     let card = getRandomCard();

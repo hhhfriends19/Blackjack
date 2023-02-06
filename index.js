@@ -7,9 +7,9 @@ const inputNameEl = document.getElementById("inputName-el");
 const inputBtn = document.getElementById("input-btn");
 
 inputBtn.addEventListener("click", function() {
-    if( inputNameEl.value != ""){playerEl.textContent = "Welcome, "+inputNameEl.value;}
+    if( inputNameEl.value != "" && inputNameEl.value != " "){playerEl.textContent = "Welcome, "+inputNameEl.value;}
     else(
-        console.log("Input your name, please.")
+        playerEl.textContent = "There is nothing in the text box"
     )
 });
 
@@ -21,10 +21,13 @@ let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
-
-// 2. Grab ahold of the player-el paragraph and store it in a variable called playerEl
 let playerEl = document.getElementById("player-el");
 
+let giveItAShot = document.getElementById("giveItAShot");
+giveItAShot.innerHTML = "<button onclick='giveIAS()'>GIVE IT A SHOT!</button>";
+function giveIAS(){
+    giveItAShot.innerHTML = "<p>YOHUU</p>";
+}
 
 function getRandomCard() {
   let dice = Math.floor(Math.random() * 12) + 1;

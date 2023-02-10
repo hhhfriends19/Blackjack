@@ -6,11 +6,10 @@
 const inputNameEl = document.getElementById("inputName-el");
 const inputBtn = document.getElementById("input-btn");
 
-inputBtn.addEventListener("click", function() {
-    if( inputNameEl.value != "" && inputNameEl.value != " "){playerEl.textContent = "Welcome, "+inputNameEl.value;}
-    else(
-        playerEl.textContent = "There is nothing in the text box"
-    )
+inputBtn.addEventListener("click", function () {
+  if (inputNameEl.value != "") {
+    playerEl.textContent = "Welcome, " + inputNameEl.value;
+  } else console.log("Input your name, please.");
 });
 
 let cards = [];
@@ -21,13 +20,24 @@ let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
-let playerEl = document.getElementById("player-el");
 
-let giveItAShot = document.getElementById("giveItAShot");
+// 2. Grab ahold of the player-el paragraph and store it in a variable called playerEl
+let playerEl = document.getElementById("player-el");
+const giveItAShot = document.getElementById("giveItAShot");
 giveItAShot.innerHTML = "<button onclick='giveIAS()'>GIVE IT A SHOT!</button>";
-function giveIAS(){
-    giveItAShot.innerHTML = "<p>YOHUU</p>";
+
+function giveIAS() {
+  giveIAS.innerHTML = "<p>hhhhh</p>";
 }
+
+// add function changeBC/removeBC to change/remove the background of the input field
+inputNameEl.addEventListener("focus", function() {
+    document.getElementById("inputName-el").style.backgroundColor = "#FFFF8A";
+})
+inputNameEl.addEventListener("blur", function() {
+    document.getElementById("inputName-el").style.backgroundColor = "";
+})
+
 
 function getRandomCard() {
   let dice = Math.floor(Math.random() * 12) + 1;

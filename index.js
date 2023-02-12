@@ -9,6 +9,8 @@ const inputBtn = document.getElementById("input-btn");
 inputBtn.addEventListener("click", function () {
   if (inputNameEl.value != "") {
     playerEl.textContent = "Welcome, " + inputNameEl.value;
+    // after the user write down their name and click confirm, the placehold will reset
+    inputNameEl.value = ""
   } else console.log("Input your name, please.");
 });
 
@@ -29,15 +31,6 @@ giveItAShot.innerHTML = "<button onclick='giveIAS()'>GIVE IT A SHOT!</button>";
 function giveIAS() {
   giveIAS.innerHTML = "<p>hhhhh</p>";
 }
-
-// add function changeBC/removeBC to change/remove the background of the input field
-inputNameEl.addEventListener("focus", function() {
-    document.getElementById("inputName-el").style.backgroundColor = "#FFFF8A";
-})
-inputNameEl.addEventListener("blur", function() {
-    document.getElementById("inputName-el").style.backgroundColor = "";
-})
-
 
 function getRandomCard() {
   let dice = Math.floor(Math.random() * 12) + 1;
